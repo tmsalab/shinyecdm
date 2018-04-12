@@ -8,12 +8,11 @@ summary(model_info())
 model_selection_graph(model_info())
 ```
 
-
 ```{r evolution_slipping, fig.height=5}
 parameter_evolution_graph(model_info(), type = "slipping")
 ```
 
-
 ```{r evolution_guessing, fig.height=5}
 parameter_evolution_graph(model_info(), type = "guessing")
 ```
+

@@ -1,31 +1,37 @@
 library("ecdm")
 
+# By default, the file size limit is 5MB. Change it via:
+# options(shiny.maxRequestSize = 9*1024^2)
+# So, 9 MB is the new limit
+
 function(input, output) {
 
-  data_set <- reactive({
-    # req(input$file1)
-    #
-    # read.csv(input$file1$datapath,
-    #           header = input$header)
+  data_set = eventReactive(input$go, {
+    infile = input$datafile
 
-    switch(input$dataset,
-           "trial_matrix" = as.matrix(tmsadata::trial_matrix))
-
+    # No file detected
+    if (is.null(infile)) {
+      return(NULL)
+    }
+    d = ecdm::read_items(infile$datapath,
+                         header = input$header,
+                         sep = input$sep)
   })
-
-
 
   model_info = eventReactive(input$go, {
-     auto_edina(data_set(),
-           k = c(input$startk:input$endk),
-           burnin = input$burnin, chain_length = input$chain_length)
+    auto_edina(
+        data_set(),
+        k = c(input$startk:input$endk),
+        burnin = input$burnin,
+        chain_length = input$chain_length
+      )
   })
 
-  output$regPlot <- renderPlot({
+  output$regPlot = renderPlot({
     autoplot(model_info())
   })
 
-  output$downloadReport <- downloadHandler(
+  output$downloadReport = downloadHandler(
     filename = function() {
       paste('my-report', sep = '.', switch(
         input$format, PDF = 'pdf', HTML = 'html', Word = 'docx'
@@ -33,16 +39,16 @@ function(input, output) {
     },
 
     content = function(file) {
-      src <- normalizePath(system.file("shiny", "edina", 'report.Rmd', package = "shinyecdm"))
+      src = normalizePath(system.file("shiny", "edina", 'report.Rmd', package = "shinyecdm"))
 
       # temporarily switch to the temp dir, in case you do not have write
       # permission to the current working directory
-      owd <- setwd(tempdir())
+      owd = setwd(tempdir())
       on.exit(setwd(owd))
       file.copy(src, 'report.Rmd', overwrite = TRUE)
 
       library(rmarkdown)
-      out <- render('report.Rmd',
+      out = render('report.Rmd',
                   switch(
                     input$format,
                     PDF  = pdf_document(),

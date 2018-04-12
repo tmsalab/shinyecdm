@@ -4,18 +4,32 @@ fluidPage(
     sidebarPanel(
       helpText(),
 
-      selectInput(inputId = "dataset",
-                  label = "Choose a dataset:",
-                  choices = c("trial_matrix")),
+      # selectInput(inputId = "dataset",
+      #             label = "Choose a dataset:",
+      #             choices = c("trial_matrix")),
 
       # # Input: Select a file ----
-      # fileInput("file1", "Choose CSV File",
-      #           multiple = TRUE,
-      #           accept = c("text/csv",
-      #                      "text/comma-separated-values,text/plain",
-      #                      ".csv")),
+      fileInput('datafile', 'Choose file to upload',
+                accept = c(
+                  'text/csv',
+                  'text/comma-separated-values',
+                  'text/tab-separated-values',
+                  'text/plain',
+                  '.csv',
+                  '.tsv',
+                  '.txt'
+                )
+      ),
+      tags$hr(),
       # # Input: Checkbox if file has header ----
-      # checkboxInput("header", "Header", TRUE),
+      checkboxInput('header', 'Variable Names Included', FALSE),
+      # # Input: Radio Buttons if has a separate different than = ' ' ----
+      radioButtons('sep', 'Separator',
+                   c(Comma=',',
+                     Semicolon=';',
+                     Tab='\t',
+                     Space=' '),
+                   ' '),
       # Horizontal line ----
       tags$hr(),
       numericInput(inputId = "startk",
