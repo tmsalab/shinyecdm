@@ -1,4 +1,4 @@
-library("ecdm")
+library("edina")
 
 # By default, the file size limit is 5MB. Change it via:
 # options(shiny.maxRequestSize = 9*1024^2)
@@ -28,7 +28,7 @@ function(input, output) {
   })
 
   output$regPlot = renderPlot({
-    autoplot(model_info())
+    edina:::autoplot.auto_edina(model_info())
   })
 
   output$downloadReport = downloadHandler(
