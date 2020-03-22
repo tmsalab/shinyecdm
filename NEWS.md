@@ -19,6 +19,3 @@
 # shinyecdm 0.1.0
 
 - Shiny interfaces for the `edina` function implemented in the `ecdm` package.
-
-
-
