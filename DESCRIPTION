@@ -25,8 +25,9 @@ BugReports: https://github.com/tmsalab/shinyecdm/issues
 License: GPL (>= 2)
 Depends:
     R (>= 3.5.0),
-    shiny,
-    ecdm
+    shiny
+Imports:
+    edina
 Suggests:
     knitr,
     rmarkdown
@@ -35,4 +36,4 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
-Remotes: tmsalab/ecdm
+Remotes: tmsalab/edina
