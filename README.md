@@ -1,16 +1,14 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-[![Project Status: Active - The project has reached a stable, usable
-state and is being actively
-developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
-[![Travis-CI Build
-Status](https://travis-ci.org/tmsalab/shinyecdm.svg?branch=master)](https://travis-ci.org/tmsalab/shinyecdm)
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/shinyecdm)](https://cran.r-project.org/package=shinyecdm)
-[![CRAN RStudio mirror
-downloads](http://cranlogs.r-pkg.org/badges/shinyecdm)](http://www.r-pkg.org/pkg/shinyecdm)
+# shinyecdm
 
-# `shinyecdm`
+<!-- badges: start -->
+
+[![R build
+status](https://github.com/tmsalab/shinyecdm/workflows/R-CMD-check/badge.svg)](https://github.com/tmsalab/shinyecdm/actions)
+[![Package-License](http://img.shields.io/badge/license-GPL%20\(%3E=2\)-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html)
+<!-- badges: end -->
 
 The goal of `shinyecdm` is to provide a user interface for the
 estimation routines in the [`ecdm`](https://github.com/tmsalab/ecdm) R
@@ -18,11 +16,11 @@ package.
 
 ## Installation
 
-You can install `shinyecdm` from github with:
+You can install `shinyecdm` from GitHub with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("tmsalab/shinyecdm")
+if(!requireNamespace("remotes")) install.packages("remotes")
+remotes::install_github("tmsalab/shinyecdm")
 ```
 
 ## Usage
@@ -47,6 +45,20 @@ routines are *wrapped* into a web interface that is powered by the
 `shiny` package. As a result, the estimation methods can be served
 either *locally* or *remotely* through a server equipped with shiny.
 
-# License
+## Authors
+
+James Joseph Balamuta, Steven Andrew Culpepper, and Jeffrey Douglas
+
+## Citing the shinyecdm package
+
+To ensure future development of the package, please cite `shinyecdm`
+package if used during an analysis or simulation studies. Citation
+information for the package may be acquired by using in *R*:
+
+``` r
+citation("shinyecdm")
+```
+
+## License
 
 GPL (\>= 2)
