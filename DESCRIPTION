@@ -12,6 +12,10 @@ Authors@R: c(
            email = "sculpepp@illinois.edu",
            role = c("aut", "cph"),
            comment = c(ORCID = "0000-0003-4226-6176")
+           ),
+    person("Jeffrey", "Douglas", 
+           email = "jeffdoug@illinois.edu", 
+           role = c("aut", "cph")
            )
     )
 Description: Provides a web interface for interacting with the 'ecdm' R package
@@ -20,6 +24,7 @@ URL: https://github.com/tmsalab/shinyecdm
 BugReports: https://github.com/tmsalab/shinyecdm/issues
 License: GPL (>= 2)
 Depends:
+    R (>= 3.5.0),
     shiny,
     ecdm
 Suggests:

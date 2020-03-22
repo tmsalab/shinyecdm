@@ -27,6 +27,7 @@ Useful links:
 Authors:
 \itemize{
   \item Steven Andrew Culpepper \email{sculpepp@illinois.edu} (\href{https://orcid.org/0000-0003-4226-6176}{ORCID}) [copyright holder]
+  \item Jeffrey Douglas \email{jeffdoug@illinois.edu} [copyright holder]
 }
 
 }
