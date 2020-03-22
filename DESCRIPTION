@@ -1,8 +1,19 @@
 Package: shinyecdm
 Type: Package
 Title: Shiny Graphical User Interface for the ecdm Package
-Version: 0.1.0
-Authors@R: person("James", "Balamuta", email = "balamut2@illinois.edu", role = c("aut", "cre"))
+Version: 0.1.0.9000
+Authors@R: c(
+    person("James Joseph", "Balamuta", 
+            email = "balamut2@illinois.edu",
+            role = c("aut", "cph", "cre"),
+            comment = c(ORCID = "0000-0003-2826-8458")
+          ),
+    person("Steven Andrew", "Culpepper", 
+           email = "sculpepp@illinois.edu",
+           role = c("aut", "cph"),
+           comment = c(ORCID = "0000-0003-4226-6176")
+           )
+    )
 Description: Provides a web interface for interacting with the 'ecdm' R package
    using the Shiny framework.
 URL: https://github.com/tmsalab/shinyecdm
@@ -18,5 +29,5 @@ VignetteBuilder: knitr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.0.1
+RoxygenNote: 7.1.0
 Remotes: tmsalab/ecdm

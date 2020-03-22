@@ -7,7 +7,7 @@
 \title{shinyecdm: Shiny Graphical User Interface for the ecdm Package}
 \description{
 Provides a web interface for interacting with the 'ecdm' R package
-using the Shiny framework.
+   using the Shiny framework.
 }
 \details{
 The \code{shinyecdm} package provides a way to encase the estimation routines
@@ -22,6 +22,11 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: James Balamuta \email{balamut2@illinois.edu}
+\strong{Maintainer}: James Joseph Balamuta \email{balamut2@illinois.edu} (\href{https://orcid.org/0000-0003-2826-8458}{ORCID}) [copyright holder]
+
+Authors:
+\itemize{
+  \item Steven Andrew Culpepper \email{sculpepp@illinois.edu} (\href{https://orcid.org/0000-0003-4226-6176}{ORCID}) [copyright holder]
+}
 
 }
