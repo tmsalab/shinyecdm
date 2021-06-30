@@ -13,7 +13,7 @@ function(input, output) {
     if (is.null(infile)) {
       return(NULL)
     }
-    d = ecdm::read_items(infile$datapath,
+    d = edmcore::read_item_matrix(infile$datapath,
                          header = input$header,
                          sep = input$sep)
   })
